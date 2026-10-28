@@ -21,6 +21,7 @@
     </a>
     <nav aria-label="Main">
       <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="routes.html">Routes</a></li>
         <li><a href="services.html">Services</a></li>
@@ -39,7 +40,11 @@
 
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero hero-bg hero-center on-dark" style="--scrim:rgba(11,36,64,0.63)" aria-labelledby="hero-title">
+  <picture class="hero-img">
+    <source media="(max-width: 700px)" srcset="images/springbok-hero.webp">
+    <img src="images/hero-home-1500.webp" width="1500" height="562" alt="" fetchpriority="high" style="object-position:62% center">
+  </picture>
   <div class="wrap">
     <div class="hero-copy">
       <p class="eyebrow">Cross-border road freight &middot; Namibia to SADC</p>
@@ -51,31 +56,31 @@
       </div>
     </div>
 
-    <div class="hero-media">
-      <figure class="photo">
-        <img src="images/springbok-hero.webp" width="525" height="562" fetchpriority="high"
-             alt="A springbok standing side-on in golden grassland at sunrise, looking towards the camera">
-      </figure>
-      <div class="waybill">
-        <div class="waybill-head">
-          <span class="label">Quote desk</span>
-          <span class="label">Namibia</span>
-        </div>
-        <dl>
-          <div class="waybill-row">
-            <dt>Call</dt>
-            <dd><a href="tel:+264816788523">+264 81 678 8523</a><small>Local: 081 678 8523</small></dd>
-          </div>
-          <div class="waybill-row">
-            <dt>Email</dt>
-            <dd><a href="mailto:asser@aaspringbok.net">asser@aaspringbok.net</a></dd>
-          </div>
-          <div class="waybill-row">
-            <dt>Reach</dt>
-            <dd><span class="big">7 countries</span><small>Angola, Botswana, DR Congo, Mozambique, South Africa, Zambia, Zimbabwe</small></dd>
-          </div>
-        </dl>
+  </div>
+  <p class="hero-caption">Springbok &middot; Southern Africa</p>
+</section>
+
+<section class="desk-strip" aria-label="Quote desk">
+  <div class="wrap">
+    <div class="waybill horizontal">
+      <div class="waybill-head">
+        <span class="label">Quote desk</span>
+        <span class="label">Namibia</span>
       </div>
+      <dl>
+        <div class="waybill-row">
+          <dt>Call</dt>
+          <dd><a href="tel:+264816788523">+264 81 678 8523</a><small>Local: 081 678 8523</small></dd>
+        </div>
+        <div class="waybill-row">
+          <dt>Email</dt>
+          <dd><a href="mailto:asser@aaspringbok.net">asser@aaspringbok.net</a></dd>
+        </div>
+        <div class="waybill-row">
+          <dt>Reach</dt>
+          <dd><span class="big">7 countries</span><small>Angola, Botswana, DR Congo, Mozambique, South Africa, Zambia, Zimbabwe</small></dd>
+        </div>
+      </dl>
     </div>
   </div>
 </section>

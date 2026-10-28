@@ -34,6 +34,10 @@ Type: Oswald (display), Public Sans (body), IBM Plex Mono (labels, data). Minimu
 
 Layout: 1200px max width, 32px gutter (20px under 600px). Breakpoints are 1080, 900 and 600px. Square corners throughout, with no radii or shadows, to fit the document concept.
 
+## Heroes
+
+Every page opens with a full-bleed photo hero (`.hero-bg`) with centred text (`.hero-center`). A flat navy scrim, no gradient, sits over the photo. Each hero sets its own `--scrim` opacity inline: the lightest value at which every hero text element still measured at least 4.9:1 (AA needs 4.5:1) against the rendered photo pixels at 360, 390, 768, 1280 and 1600px. If you swap a photo, re-check contrast before lowering the scrim. Hero eyebrows are white because the green accent drops below AA over photos. On Home, the quote desk strip (`.desk-strip`, `.waybill.horizontal`) overlaps the bottom of the hero.
+
 ## Components
 
 - `.waybill`: a navy header strip over `dl` rows. Used for the quote desk and contact details.
@@ -44,13 +48,13 @@ Layout: 1200px max width, 32px gutter (20px under 600px). Breakpoints are 1080, 
 
 ## Behaviour
 
-- The mobile nav has no hamburger. Under 900px the four links move to a second header row, so every page is one tap away.
+- Main nav: Home, About, Routes, Services, Contact. The mobile nav has no hamburger. Under 900px the five links move to a second header row, so every page is one tap away.
 - The quote form validates on the client, then opens the visitor's email app with the request pre-filled to asser@aaspringbok.net, cc admin@. There is no backend, so the page never says the request was sent. A fallback panel shows the request text to copy. Without JavaScript the form falls back to a plain `mailto:` action.
 - `prefers-reduced-motion` turns off smooth scroll and transitions.
 
 ## Editing
 
-Header and footer are repeated in every page. Change them in all six HTML files. Images live in `images/` as WebP at two widths each. Sources are listed in `credits.html`.
+Header and footer are repeated in every page. Change them in all six HTML files, and move `aria-current="page"` to the matching link. Images live in `images/` as WebP at two widths each. Sources are listed in `credits.html`.
 
 ## Open items for the client
 
