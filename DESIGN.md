@@ -1,6 +1,6 @@
 # AA Springbok: design notes
 
-Static multi-page site (plain HTML, one stylesheet, one small script). No build step. Open `index.html` or serve the folder with any static server.
+Static multi-page site (plain HTML, one stylesheet, one small script). No build step. Preview locally with any static server; clean URLs such as `/about` need Apache (see Deploying).
 
 ## Audience and goal
 
@@ -82,3 +82,12 @@ Header and footer are repeated in every page. Change them in all six HTML files,
 - Unsplash photographer names were not recorded when the images were first chosen. The Unsplash License does not require credit, but add names if known.
 - `background.jpeg` and `aaspringboklogo.png` are kept as source masters. The pages use the optimized copies in `images/`.
 - A form backend (for example a hosted form service) would let quotes arrive without the visitor's email app.
+
+## Deploying (cPanel)
+
+1. Upload `aaspringbok-upload.zip` into `public_html` with cPanel File Manager, then Extract. Files must sit directly in `public_html`, not in a subfolder.
+2. `.htaccess` is a hidden file. In File Manager, Settings > Show Hidden Files to confirm it extracted.
+3. `.htaccess` serves `/about` from `about.html`, permanently redirects old `.html` addresses to clean ones, strips trailing slashes, and sets types, compression and caching.
+4. Internal links are root-relative (`/about`). The site must live at the domain root. A subfolder install would need every link changed.
+
+Rebuild the zip after any change. It contains `.htaccess`, the six HTML pages, `styles.css`, `site.js`, `favicon.svg`, `images/` and `fonts/`. `background.jpeg`, `aaspringboklogo.png` and this file are not needed on the server.
