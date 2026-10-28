@@ -38,12 +38,29 @@ Layout: 1200px max width, 32px gutter (20px under 600px). Breakpoints are 1080, 
 
 Every page opens with a full-bleed photo hero (`.hero-bg`) with centred text (`.hero-center`). A flat navy scrim, no gradient, sits over the photo. Each hero sets its own `--scrim` opacity inline: the lightest value at which every hero text element still measured at least 4.9:1 (AA needs 4.5:1) against the rendered photo pixels at 360, 390, 768, 1280 and 1600px. If you swap a photo, re-check contrast before lowering the scrim. Hero eyebrows are white because the green accent drops below AA over photos. On Home, the quote desk strip (`.desk-strip`, `.waybill.horizontal`) overlaps the bottom of the hero.
 
+## Motion
+
+Motion is restrained and has a job: it shows hierarchy and draws attention to the route map.
+
+- Hero photos zoom slowly once (22s). The eyebrow, intro text and buttons settle in on load. The h1 only slides, so it is never invisible.
+- Blocks marked `.reveal` fade up as they enter the viewport. Stagger them with an inline `--d` delay, for example `style="--d:120ms"`.
+- The route map draws its corridors in sequence when it comes into view, then the destinations fade in and the Windhoek hub pulses. Corridor paths need `pathLength="1"`.
+- Photos zoom slightly on hover, and link arrows nudge.
+- The `.js` class is set inline in `<head>`. Without JavaScript nothing is hidden. With `prefers-reduced-motion`, all of it is off and content shows immediately. `site.js` handles both cases.
+
+## Images
+
+Photos are local WebP files, two widths each (`-640` and `-1200` for content images). Road, border and port photos come from Wikimedia Commons under CC BY or CC BY-SA. Each one is attributed on `credits.html`, with author, licence link, source link and "cropped and resized". Keep that page in sync when adding images. Trucks pictured are not the company's vehicles, and captions never imply they are.
+
 ## Components
 
 - `.waybill`: a navy header strip over `dl` rows. Used for the quote desk and contact details.
 - `.route-map`: inline SVG. Its corridors are the public Walvis Bay corridors (Trans-Kalahari, Trans-Caprivi, Trans-Cunene, Trans-Oranje).
 - `.route-table`: a real table. It stacks into labelled rows under 600px.
-- `.service-grid`, `.feature-list`, `.process`, `.checklist`: open, rule-separated lists rather than cards.
+- `.media-cards`: four image cards with a one-line caption. A `.call-tile` can stand in for a photo where the card is about contact.
+- `.zigzag` / `.zz-row`: alternating image and text rows on Services.
+- `.gallery`: captioned photo tiles on Routes.
+- `.feature-list`, `.process`, `.checklist`: open, rule-separated lists rather than cards.
 - `.cta-band`: closes a page with the phone number and the quote button. Green on Home and Services; `.cta-light` (base sand with a navy rule) on About and Routes so pages do not all end the same way.
 
 ## Behaviour

@@ -1,3 +1,26 @@
+// Scroll motion: reveals .reveal blocks and draws the route map as they enter the viewport.
+// The .js class is set inline in <head>; without it nothing is hidden.
+(function () {
+  var targets = document.querySelectorAll('.reveal, .route-map');
+  if (!targets.length) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  targets.forEach(function (el) { observer.observe(el); });
+})();
+
 // Quote form: validates input, then hands the request to the visitor's email app.
 // There is no backend, so the page never claims the request was sent.
 (function () {

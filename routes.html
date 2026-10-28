@@ -10,6 +10,7 @@
 <link rel="preload" href="fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -62,16 +63,17 @@
         <text class="ocean" transform="translate(10 205) rotate(-90)">Atlantic Ocean</text>
         <path class="namibia" d="M34.6 225 L60 219.4 L69.2 220 L84 228 L169 227.8 L179.2 236 L200 238 L220 240 L264 231 L280.6 226 L301.6 231.6 L305.2 236 L284 238 L266 240 L220 246 L219.8 320 L200 320 L200 375 L200 448.6 L190 452 L172 457 L152.4 455 L144 445 L138 442 L129 452.6 L117 430 L104 412 L99 390 L92 360 L90 339 L85 322 L68 298 L52 270 L36 240 Z"/>
         <g class="corridor">
-          <path d="M90 339 L141.6 331.2"/>
-          <path d="M141.6 331.2 L179.4 329 L318.2 373 L361 404 L451.4 399.4"/>
-          <path d="M141.6 331.2 L133 289.2 L119 238.2 L118 228 L64.6 56.8"/>
-          <path d="M133 289.2 L162 271.4 L195.4 238.4 L285.4 230 L365.6 188.4 L349.6 113.2"/>
-          <path d="M285.4 230 L305.2 236 L316.6 238.6 L421 236.6"/>
+          <path pathLength="1" d="M90 339 L141.6 331.2"/>
+          <path pathLength="1" d="M141.6 331.2 L179.4 329 L318.2 373 L361 404 L451.4 399.4"/>
+          <path pathLength="1" d="M141.6 331.2 L133 289.2 L119 238.2 L118 228 L64.6 56.8"/>
+          <path pathLength="1" d="M133 289.2 L162 271.4 L195.4 238.4 L285.4 230 L365.6 188.4 L349.6 113.2"/>
+          <path pathLength="1" d="M285.4 230 L305.2 236 L316.6 238.6 L421 236.6"/>
         </g>
         <path class="corridor minor" d="M141.6 331.2 L162.6 411.6 L152.4 455 L156 480"/>
         <circle class="port" cx="90" cy="339" r="4"/>
         <text class="minor-name" x="82" y="356" text-anchor="end">Walvis Bay</text>
         <text class="minor-name" x="168" y="472">To Cape Town</text>
+        <circle class="hub-pulse" cx="141.6" cy="331.2" r="10"/>
         <circle class="hub-ring" cx="141.6" cy="331.2" r="13"/>
         <circle class="hub" cx="141.6" cy="331.2" r="6"/>
         <text class="minor-name" x="126" y="318" text-anchor="end">Windhoek</text>
@@ -92,14 +94,14 @@
 
 <section class="section" id="route-table" aria-labelledby="table-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div>
         <p class="eyebrow">Route manifest</p>
         <h2 id="table-title">Destinations and the corridors that reach them.</h2>
       </div>
-      <p>Corridor names are the public routes used by regional road freight. Tell us your pickup and drop-off towns and we will confirm the routing.</p>
+      <p>Tell us your towns and we will confirm the routing.</p>
     </div>
-    <div class="table-scroll" tabindex="0" role="region" aria-label="Route table, scrolls sideways on small screens">
+    <div class="table-scroll reveal" tabindex="0" role="region" aria-label="Route table, scrolls sideways on small screens">
       <table class="route-table">
         <caption>Origin: Namibia</caption>
         <thead>
@@ -121,29 +123,54 @@
   </div>
 </section>
 
+<section class="section rule-top" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Along the corridors</p>
+        <h2 id="gallery-title">Where the roads cross.</h2>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure class="reveal" style="--d:0ms">
+        <img src="images/walvis-cranes-640.webp" srcset="images/walvis-cranes-640.webp 640w, images/walvis-cranes-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 899px) 50vw, 380px" width="1200" height="800" loading="lazy" alt="Container cranes at the Port of Walvis Bay seen across the lagoon">
+        <figcaption><b>Walvis Bay</b><span>Port where the corridors begin</span></figcaption>
+      </figure>
+      <figure class="reveal" style="--d:120ms">
+        <img src="images/katima-bridge-640.webp" srcset="images/katima-bridge-640.webp 640w, images/katima-bridge-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 899px) 50vw, 380px" width="1200" height="800" loading="lazy" alt="Katima Mulilo Bridge spanning the Zambezi above rapids">
+        <figcaption><b>Katima Mulilo Bridge</b><span>Trans-Caprivi, Namibia to Zambia</span></figcaption>
+      </figure>
+      <figure class="reveal" style="--d:240ms">
+        <img src="images/kazungula-640.webp" srcset="images/kazungula-640.webp 640w, images/kazungula-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 899px) 50vw, 380px" width="1200" height="800" loading="lazy" alt="A truck ferry crossing the Zambezi at Kazungula">
+        <figcaption><b>Kazungula</b><span>Zambezi crossing, Botswana and Zambia</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section class="section band-sand2" aria-labelledby="plan-title">
   <div class="wrap two-col">
-    <div>
+    <div class="reveal">
       <p class="eyebrow">How a route gets planned</p>
       <h2 id="plan-title">Planned around the border, not just the destination.</h2>
-      <p>The route on paper is the easy part. What matters is the border post itself: its hours, its paperwork, and how it is moving on a given day.</p>
+      <p>The border post decides the timing: its hours, its paperwork, its queue.</p>
     </div>
-    <ul class="feature-list plain">
+    <ul class="feature-list plain reveal" style="--d:120ms">
       <li class="feature">
-        <div><h3>Documentation prepared in advance</h3><p>Cross-border paperwork sorted before the truck reaches the post, not while it is queued at the boom gate.</p></div>
+        <div><h3>Documentation prepared in advance</h3><p>Sorted before the truck reaches the boom gate.</p></div>
       </li>
       <li class="feature">
-        <div><h3>Timing built around border hours</h3><p>Departure times set so trucks reach each crossing while it is open and moving.</p></div>
+        <div><h3>Timing built around border hours</h3><p>Trucks arrive while the crossing is open.</p></div>
       </li>
       <li class="feature">
-        <div><h3>Route knowledge, not a route planner app</h3><p>Roads, detours, and seasonal conditions known first-hand, not looked up.</p></div>
+        <div><h3>Route knowledge, not a route planner app</h3><p>Roads, detours and seasons known first-hand.</p></div>
       </li>
     </ul>
   </div>
 </section>
 
 <section class="cta-band cta-light" aria-labelledby="cta-title">
-  <div class="wrap">
+  <div class="wrap reveal">
     <div>
       <p class="eyebrow">Destination not listed?</p>
       <h2 id="cta-title">Ask us. We may already run close to it.</h2>
@@ -201,6 +228,7 @@
     </div>
   </div>
 </footer>
+<script src="site.js" defer></script>
 
 </body>
 </html>

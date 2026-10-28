@@ -10,6 +10,7 @@
 <link rel="preload" href="fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -87,18 +88,17 @@
 
 <section class="section rule-top" aria-labelledby="about-title">
   <div class="wrap split">
-    <figure class="photo ratio-3-2">
+    <figure class="photo ratio-3-2 reveal">
       <img src="images/namibia-road-800.webp"
            srcset="images/namibia-road-800.webp 800w, images/namibia-road-1600.webp 1600w"
            sizes="(max-width: 899px) 100vw, 560px" width="1600" height="900" loading="lazy"
            alt="A straight tarred road running through flat Namibian desert under a clear sky">
       <figcaption>Namibia</figcaption>
     </figure>
-    <div class="prose">
+    <div class="prose reveal" style="--d:120ms">
       <p class="eyebrow">Built on the road</p>
       <h2 id="about-title">Led by someone who knows these routes.</h2>
-      <p>The company was founded by Alies Asser Nowoseb, who has spent 15 years working in transport and logistics across the region. That time on the road shapes how each load is planned, how a border crossing is timed, and how cargo keeps moving instead of waiting in a queue.</p>
-      <p>It is run as a small, accountable operation rather than a call centre, so every job has someone behind it who knows the route.</p>
+      <p>Founded by Alies Asser Nowoseb after 15 years in transport and logistics across the region. Small and accountable: every load has someone behind it who knows the road.</p>
       <figure class="namesake">
         <blockquote><p>Named after the springbok: built for distance, quick on its feet, and at home covering open ground.</p></blockquote>
       </figure>
@@ -111,7 +111,7 @@
 
 <section class="section band-navy on-dark routes-band" aria-labelledby="routes-title">
   <div class="wrap">
-    <div>
+    <div class="reveal">
       <p class="eyebrow">Where we run</p>
       <h2 id="routes-title">One base in Namibia. Seven countries across the border.</h2>
       <p class="lead">Every route starts in Namibia and runs along the region's main road corridors into a neighbouring SADC country.</p>
@@ -136,16 +136,17 @@
         <text class="ocean" transform="translate(10 205) rotate(-90)">Atlantic Ocean</text>
         <path class="namibia" d="M34.6 225 L60 219.4 L69.2 220 L84 228 L169 227.8 L179.2 236 L200 238 L220 240 L264 231 L280.6 226 L301.6 231.6 L305.2 236 L284 238 L266 240 L220 246 L219.8 320 L200 320 L200 375 L200 448.6 L190 452 L172 457 L152.4 455 L144 445 L138 442 L129 452.6 L117 430 L104 412 L99 390 L92 360 L90 339 L85 322 L68 298 L52 270 L36 240 Z"/>
         <g class="corridor">
-          <path d="M90 339 L141.6 331.2"/>
-          <path d="M141.6 331.2 L179.4 329 L318.2 373 L361 404 L451.4 399.4"/>
-          <path d="M141.6 331.2 L133 289.2 L119 238.2 L118 228 L64.6 56.8"/>
-          <path d="M133 289.2 L162 271.4 L195.4 238.4 L285.4 230 L365.6 188.4 L349.6 113.2"/>
-          <path d="M285.4 230 L305.2 236 L316.6 238.6 L421 236.6"/>
+          <path pathLength="1" d="M90 339 L141.6 331.2"/>
+          <path pathLength="1" d="M141.6 331.2 L179.4 329 L318.2 373 L361 404 L451.4 399.4"/>
+          <path pathLength="1" d="M141.6 331.2 L133 289.2 L119 238.2 L118 228 L64.6 56.8"/>
+          <path pathLength="1" d="M133 289.2 L162 271.4 L195.4 238.4 L285.4 230 L365.6 188.4 L349.6 113.2"/>
+          <path pathLength="1" d="M285.4 230 L305.2 236 L316.6 238.6 L421 236.6"/>
         </g>
         <path class="corridor minor" d="M141.6 331.2 L162.6 411.6 L152.4 455 L156 480"/>
         <circle class="port" cx="90" cy="339" r="4"/>
         <text class="minor-name" x="82" y="356" text-anchor="end">Walvis Bay</text>
         <text class="minor-name" x="168" y="472">To Cape Town</text>
+        <circle class="hub-pulse" cx="141.6" cy="331.2" r="10"/>
         <circle class="hub-ring" cx="141.6" cy="331.2" r="13"/>
         <circle class="hub" cx="141.6" cy="331.2" r="6"/>
         <text class="minor-name" x="126" y="318" text-anchor="end">Windhoek</text>
@@ -165,7 +166,7 @@
 
 <section class="section" aria-labelledby="services-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div>
         <p class="eyebrow">What we handle</p>
         <h2 id="services-title">The parts of the job that make a delivery reliable.</h2>
@@ -174,25 +175,29 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
-    <ul class="service-grid compact">
-      <li class="service">
-        <div><span class="num">01</span><h3>Cross-border freight</h3><p>Full and part loads moved from Namibia into the neighbouring SADC countries we serve.</p></div>
+    <ul class="media-cards">
+      <li class="media-card reveal" style="--d:0ms">
+        <figure><img src="images/truck-b2-640.webp" srcset="images/truck-b2-640.webp 640w, images/truck-b2-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 50vw, 280px" width="640" height="427" loading="lazy" alt="A truck heading towards the mountains on the B2 highway in Namibia"></figure>
+        <span class="num">01</span><h3>Cross-border freight</h3><p>Full and part loads, Namibia to seven SADC countries.</p>
       </li>
-      <li class="service">
-        <div><span class="num">02</span><h3>Border documentation</h3><p>Paperwork and coordination handled ahead of each crossing, so trucks spend less time waiting at the post.</p></div>
+      <li class="media-card reveal" style="--d:100ms">
+        <figure><img src="images/border-sign-640.webp" srcset="images/border-sign-640.webp 640w, images/border-sign-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 50vw, 280px" width="640" height="427" loading="lazy" alt="Republic of Namibia welcome sign at the South African border, Karas Region"></figure>
+        <span class="num">02</span><h3>Border documentation</h3><p>Paperwork sorted before the truck reaches the post.</p>
       </li>
-      <li class="service">
-        <div><span class="num">03</span><h3>Route planning</h3><p>Trips scheduled around the road conditions, distances, and border hours of each corridor.</p></div>
+      <li class="media-card reveal" style="--d:200ms">
+        <figure><img src="images/trans-kalahari-640.webp" srcset="images/trans-kalahari-640.webp 640w, images/trans-kalahari-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 50vw, 280px" width="640" height="427" loading="lazy" alt="The Trans-Kalahari Highway running straight through flat desert"></figure>
+        <span class="num">03</span><h3>Route planning</h3><p>Timed around roads, distances and border hours.</p>
       </li>
-      <li class="service">
-        <div><span class="num">04</span><h3>Direct client contact</h3><p>One point of contact from booking to delivery, backed by the founder's own route experience.</p></div>
+      <li class="media-card reveal" style="--d:300ms">
+        <a class="call-tile" href="tel:+264816788523"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg><span><span class="call-number">+264 81 678 8523</span><br><span class="call-hint">Tap to call</span></span></a>
+        <span class="num">04</span><h3>Direct client contact</h3><p>One person from booking to delivery.</p>
       </li>
     </ul>
   </div>
 </section>
 
 <section class="cta-band on-dark" aria-labelledby="cta-title">
-  <div class="wrap">
+  <div class="wrap reveal">
     <div>
       <p class="eyebrow">Ready to move a load?</p>
       <h2 id="cta-title">Tell us what needs to move, and where it's going.</h2>
@@ -250,6 +255,7 @@
     </div>
   </div>
 </footer>
+<script src="site.js" defer></script>
 
 </body>
 </html>
